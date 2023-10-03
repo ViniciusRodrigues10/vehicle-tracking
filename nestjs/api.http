@@ -1,0 +1,29 @@
+GET http://localhost:3000
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/1
+
+###
+POST http://localhost:3000/routes/
+Content-Type: application/json
+
+{
+    "name": "route test 1",
+    "source_id": "EkZBdi4gR292LiBWYWxhZGFyZXMsIDEwMzAgLSBTYW50byBBZm9uc28sIEJldGltIC0gTUcsIDMyNjIzLTY5MCwgQnJhc2lsIjESLwoUChIJTbH1swDdpgARYOtQ1DjwovIQhggqFAoSCfmsiD4H3aYAEdRlj37c-uzz",
+    "destination_id": "ElVBdi4gTWFsLiBGbG9yaWFubyBQZWl4b3RvLCAxMDMwIC0gQ2VudGVuw6FyaW8sIENhbXBpbmEgR3JhbmRlIC0gUEIsIDU4NDI4LTEzMCwgQnJhc2lsIjESLwoUChIJ0077FDkerAcRXpyIjTisfgQQhggqFAoSCeezbXoiHqwHEZVNF9__piyk"
+}
+
+### Coisas do mapa
+
+### Pegar o place_id 1
+GET http://localhost:3000/places?text=av governador valadares, betim, 1030
+
+### Pegar o place_id 2
+GET http://localhost:3000/places?text=av floriano peixoto, campina grande, 1030
+
+### Pegar direções entre dois pontos
+GET http://localhost:3000/directions?originId=EkZBdi4gR292LiBWYWxhZGFyZXMsIDEwMzAgLSBTYW50byBBZm9uc28sIEJldGltIC0gTUcsIDMyNjIzLTY5MCwgQnJhc2lsIjESLwoUChIJTbH1swDdpgARYOtQ1DjwovIQhggqFAoSCfmsiD4H3aYAEdRlj37c-uzz&destinationId=ElVBdi4gTWFsLiBGbG9yaWFubyBQZWl4b3RvLCAxMDMwIC0gQ2VudGVuw6FyaW8sIENhbXBpbmEgR3JhbmRlIC0gUEIsIDU4NDI4LTEzMCwgQnJhc2lsIjESLwoUChIJ0077FDkerAcRXpyIjTisfgQQhggqFAoSCeezbXoiHqwHEZVNF9__piyk
+

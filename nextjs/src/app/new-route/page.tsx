@@ -1,7 +1,7 @@
 'use client';
  
 import type { DirectionsResponseData, FindPlaceFromTextResponseData } from "@googlemaps/google-maps-services-js";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { useMap } from "../hooks/useMap";
 
 export function NewRoutePage() {

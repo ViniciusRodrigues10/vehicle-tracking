@@ -1,10 +1,11 @@
 'use client';
  
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMap } from "../hooks/useMap";
 import useSWR from "swr";
 import { fetcher } from "../utils/http";
 import { Route } from "../utils/model";
+import { socket } from "../utils/socket-io";
 
 export function DriverPage() {
     const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -16,6 +17,13 @@ export function DriverPage() {
         {
             fallbackData: [],
         });
+
+        useEffect(() => {
+            socket.connect();   
+            return () => {
+                socket.disconnect();
+            }
+        }, []);
 
     async function startRoute() {
         const routeId = (document.getElementById('route') as HTMLSelectElement).value
@@ -40,9 +48,19 @@ export function DriverPage() {
         for (const step of steps) {
             await sleep(2000);
             map?.moveCar(routeId, step.start_location);
+            socket.emit('new-points', {
+                route_id: routeId,
+                lat: step.start_location.lat,
+                lng: step.start_location.lng,
+            })
       
             await sleep(2000);
             map?.moveCar(routeId, step.end_location);
+            socket.emit('new-points', {
+                route_id: routeId,
+                lat: step.end_location.lat,
+                lng: step.end_location.lng,
+            })
         }
     }
 

@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@googlemaps/google-maps-services-js": "^3.3.36",
     "@googlemaps/js-api-loader": "^1.16.2",
+    "@mui/icons-material": "^5.14.12",
+    "@mui/material": "^5.14.12",
     "@types/google.maps": "^3.54.0",
     "@types/lodash": "^4.14.198",
     "@types/node": "20.5.7",

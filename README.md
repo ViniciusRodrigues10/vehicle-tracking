@@ -8,13 +8,8 @@
 ### Tabela de conteúdos
 1. [Status do Projeto](#status-do-projeto)
 2. [Features](#features)
-<!--3. [Pré-requisitos e como rodar a aplicação](#pré-requisitos-e-como-rodar-a-aplicação)
-4. [Rodando o Back End (servidor)](#rodando-o-back-end-servidor)-->
 5. [Tecnologias utilizadas](#tecnologias-utilizadas)
-<!--6. [Resultado](#resultado)-->
 7. [Autor](#autor)
-
-<br/>
 <br/>
 
 ### Status do Projeto
